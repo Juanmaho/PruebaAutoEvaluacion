@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de Informe</title>
+</head>
+<body>
+    <h1>Generación de Informe</h1>
+    <h2>Selecciona los parámetros para generar el informe</h2>
+    <form id="reportForm">
+        <label for="programSelect">Seleccionar Programa:</label><br>
+        <select id="programSelect" required>
+            <option value="programa1">Programa 1</option>
+            <option value="programa2">Programa 2</option>
+            <option value="programa3">Programa 3</option>
+        </select><br><br>
+
+        <label for="periodSelect">Seleccionar Periodo:</label><br>
+        <select id="periodSelect" required>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+        </select><br><br>
+
+        <button type="submit">Generar Informe</button>
+    </form>
+    <p id="reportConfirmation" style="color: green; display: none;">¡Informe generado exitosamente!</p>
+
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('reportConfirmation').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
