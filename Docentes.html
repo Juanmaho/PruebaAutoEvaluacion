@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Asistencia Docente</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 30px;
+    }
+    .container {
+      max-width: 500px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .mensaje {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registro de Asistencia</h2>
+
+    <label for="docente">Nombre del Docente:</label><br>
+    <input type="text" id="docente" placeholder="Ej. Juan Pérez"><br><br>
+
+    <label for="fecha">Fecha:</label><br>
+    <input type="date" id="fecha"><br><br>
+
+    <label for="grupo">Grupo:</label><br>
+    <select id="grupo">
+      <option value="">Seleccione un grupo</option>
+      <option value="Grupo A">Grupo A</option>
+      <option value="Grupo B">Grupo B</option>
+      <option value="Grupo C">Grupo C</option>
+    </select><br><br>
+
+    <button onclick="registrarAsistencia()">Registrar Asistencia</button>
+
+    <div id="mensaje" class="mensaje">✅ Asistencia registrada correctamente.</div>
+  </div>
+
+  <script>
+    function registrarAsistencia() {
+      const docente = document.getElementById("docente").value;
+      const fecha = document.getElementById("fecha").value;
+      const grupo = document.getElementById("grupo").value;
+
+      if (docente && fecha && grupo) {
+        document.getElementById("mensaje").style.display = "block";
+      } else {
+        alert("Por favor completa todos los campos.");
+      }
+    }
+  </script>
+</body>
+</html>
